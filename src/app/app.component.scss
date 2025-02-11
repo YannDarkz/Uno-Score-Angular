@@ -1,0 +1,10 @@
+.container-index {
+    position: relative;
+    border-radius: 10px;
+    max-width: 768px;
+    background-color: rgb(199, 59, 58);
+    margin: 0 auto;
+    .container-app {
+        min-height: 80vh;
+    }
+}

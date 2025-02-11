@@ -1,0 +1,63 @@
+{
+    "hostId": 1,
+    "players": [
+      {
+        "username": "ian",
+        "roundWins": 3,
+        "isTrainingWinner": true,
+        "isChampionWinner": false
+      },
+      {
+        "username": "sync",
+        "roundWins": 2,
+        "isTrainingWinner": false,
+        "isChampionWinner": true
+      },
+      {
+        "username": "éomt",
+        "roundWins": 1,
+        "isTrainingWinner": false,
+        "isChampionWinner": false
+      }
+    ],
+    "trainingHistory": [
+      {
+        "roundNumber": 1,
+        "winner": "ian",
+        "type": "training"
+      },
+      {
+        "roundNumber": 2,
+        "winner": "sync",
+        "type": "training"
+      },
+      {
+        "roundNumber": 3,
+        "winner": "éomt",
+        "type": "training"
+      },
+      {
+        "roundNumber": 4,
+        "winner": "sync",
+        "type": "training"
+      },
+      {
+        "roundNumber": 5,
+        "winner": "ian",
+        "type": "training"
+      },
+      {
+        "roundNumber": 6,
+        "winner": "ian",
+        "type": "training"
+      },
+      {
+        "roundNumber": 7,
+        "winner": "sync",
+        "type": "champion"
+      }
+    ],
+    "winnerChampion": "sync",
+    "winnerTraining": "ian"
+  }
+  

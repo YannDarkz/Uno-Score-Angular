@@ -1,0 +1,21 @@
+<div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="!errorMessage && historyData.length > 0">
+    <h2>Histórico de Partidas</h2>
+    <ul>
+      <li *ngFor="let partida of historyData">
+        <div>
+          <strong>Data:</strong> {{ partida.data }}<br>
+          <strong>Pontuação:</strong> {{ partida.pontuacao }}<br>
+          <strong>Adversário:</strong> {{ partida.adversario }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="!errorMessage && historyData.length === 0">
+    <p>Nenhum histórico encontrado.</p>
+  </div>
+  
