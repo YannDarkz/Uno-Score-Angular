@@ -17,7 +17,6 @@ export class AppComponent {
 constructor(private serverService: ServerActiveService) {}
 
 ngOnInit(): void {
-  console.log('AppComponent initialized');
   this.serverService.checkServerStatus()
 }
 }
