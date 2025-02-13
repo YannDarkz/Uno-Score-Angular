@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from '../../services/register/register.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { RegisterService } from '../../services/register/register.service';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private registerService: RegisterService) { }
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private toastr: ToastrService) { }
 
   cadastroForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -26,31 +27,44 @@ export class RegisterComponent {
   }, { validators: this.matchPasswords });
 
   submitForm() {
-    if (this.cadastroForm.valid) {
-      const dataRegister = this.cadastroForm.value
-
-      const objectRegister  = {
-        name: dataRegister.name,
-        surname: dataRegister.surname,
-        birth: dataRegister.birth,
-        login: {
-          username: dataRegister.username,
-          password: dataRegister.password
-        }
-      }
-
-      this.registerService.postMatchData(objectRegister).subscribe({
-        next: (response) => {
-          console.log('Registro enviado com sucesso:', response); 
-        },
-        error: (err) => {
-          console.error('Erro ao enviar dados:', err);
-        }
-    })
-
-    } else {
-      this.cadastroForm.markAllAsTouched(); // Força a exibição dos erros
+    if (this.cadastroForm.invalid) {
+      this.toastr.warning('Preencha todos os campos corretamente!', 'Atenção');
+      this.cadastroForm.markAllAsTouched();
+      return;
     }
+
+    // Exibir toast de carregamento
+    const toastRef = this.toastr.info(
+      'Enviando os dados de cadastro...',
+      'Aguarde',
+      { disableTimeOut: true, closeButton: true }
+    );
+
+    const dataRegister = this.cadastroForm.value;
+
+    const objectRegister = {
+      name: dataRegister.name,
+      surname: dataRegister.surname,
+      birth: dataRegister.birth,
+      login: {
+        username: dataRegister.username,
+        password: dataRegister.password
+      }
+    };
+
+    this.registerService.postMatchData(objectRegister).subscribe({
+      next: (response) => {
+        this.toastr.clear(toastRef.toastId); 
+        this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
+        console.log('Registro enviado com sucesso:', response);
+        this.cadastroForm.reset(); 
+      },
+      error: (err) => {
+        this.toastr.clear(toastRef.toastId); 
+        this.toastr.error('Erro ao cadastrar. Tente novamente.', 'Erro');
+        console.error('Erro ao enviar dados:', err);
+      }
+    });
   }
 
   private matchPasswords(group: FormGroup) {
