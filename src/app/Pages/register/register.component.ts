@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from '../../services/register/register.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private registerService: RegisterService, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private toastr: ToastrService, private router: Router) { }
 
   cadastroForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -58,6 +58,10 @@ export class RegisterComponent {
         this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
         console.log('Registro enviado com sucesso:', response);
         this.cadastroForm.reset(); 
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+
+        }, 1500)
       },
       error: (err) => {
         this.toastr.clear(toastRef.toastId); 
