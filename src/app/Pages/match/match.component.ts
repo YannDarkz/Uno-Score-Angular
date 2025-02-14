@@ -8,11 +8,9 @@ import { MatchDataService } from '../../services/match/match-data.service';
 import { RouterLink } from '@angular/router';
 
 import { IMatchData } from '../../interfaces/matchData'
-
 interface Player {
   username: string;
 }
-
 @Component({
   selector: 'app-match',
   standalone: true,
@@ -21,10 +19,8 @@ interface Player {
   styleUrl: './match.component.scss'
 })
 
-
 export class MatchComponent {
   matchData: any;
-
   matchDataStorage: any
   host: string = "empty"; 
   hostID: string = ""
@@ -41,8 +37,6 @@ export class MatchComponent {
   isChampionActive: boolean = false; // Champion está ativo
 
   isModalVisible: boolean = false;
-  
-
   ngOnInit(): void {
 
      const matches = JSON.parse(localStorage.getItem('matches') || '[]') as IMatchData[];

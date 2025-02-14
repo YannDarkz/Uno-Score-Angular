@@ -33,7 +33,6 @@ export class RegisterComponent {
       return;
     }
 
-    // Exibir toast de carregamento
     const toastRef = this.toastr.info(
       'Enviando os dados de cadastro...',
       'Aguarde',
@@ -60,7 +59,6 @@ export class RegisterComponent {
         this.cadastroForm.reset(); 
         setTimeout(() => {
           this.router.navigate(['/login']);
-
         }, 1500)
       },
       error: (err) => {
@@ -80,6 +78,4 @@ export class RegisterComponent {
   isInvalid(field: string) {
     return this.cadastroForm.controls[field].invalid && this.cadastroForm.controls[field].touched;
   }
-
-
 }
