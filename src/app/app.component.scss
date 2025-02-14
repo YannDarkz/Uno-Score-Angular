@@ -3,8 +3,9 @@
     border-radius: 10px;
     max-width: 768px;
     background-color: rgb(199, 59, 58);
-    margin: 0 auto;
+    margin: 0vh auto 0 auto;
     .container-app {
-        min-height: 80vh;
+        padding-top: 3vh;
+        min-height: 65vh;
     }
 }
