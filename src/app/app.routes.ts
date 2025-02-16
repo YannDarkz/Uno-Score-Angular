@@ -15,7 +15,5 @@ export const routes: Routes = [
     { path: 'match', component: MatchComponent, canActivate: [authGuard]  },
     { path: 'history', component: HistoryComponent, canActivate: [authGuard]  },
     { path: 'register', component: RegisterComponent, },
-
-    //  canActivate: [authGuard]
     
 ];
