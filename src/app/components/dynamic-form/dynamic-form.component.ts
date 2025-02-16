@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-// import { MatchDataService } from '../../services/match-data.service';
 import { Router } from '@angular/router';
 import { AuthStateService } from '../../services/authState/auth-state.service';
 import { IMatchData } from '../../interfaces/matchData';
@@ -43,7 +42,6 @@ export class DynamicFormComponent {
         const matches = JSON.parse(localStorage.getItem('matches') || '[]') as IMatchData[];
         return matches.find(m => m.userId === userId) || null;
       }
-
 
   getUserid(): number | null {
     const user = localStorage.getItem('auth_user');
@@ -105,7 +103,6 @@ export class DynamicFormComponent {
   }
 
   onSubmit(): void {
-
     if(this.hasOngoingMatch){
       return console.warn("Existe uma partida em andamento, finalize antes de iniciar uma nova");
     }
@@ -122,7 +119,6 @@ export class DynamicFormComponent {
         host: this.getUsername()
       };
      
-      // localStorage.setItem('currentMatch', JSON.stringify(matchData));
       this.router.navigate(['/match'], { state: { data: matchData } });
 
       console.log('Form Submitted:', formData);
