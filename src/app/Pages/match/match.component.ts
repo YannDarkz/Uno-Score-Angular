@@ -14,7 +14,7 @@ interface Player {
 @Component({
   selector: 'app-match',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonLogoutComponent, RouterLink],
+  imports: [CommonModule, FormsModule, ButtonLogoutComponent],
   templateUrl: './match.component.html',
   styleUrl: './match.component.scss'
 })
@@ -287,8 +287,6 @@ export class MatchComponent {
   
     return matchResult;
   }
-
- 
 
   showModal() {
     this.isModalVisible = true;
