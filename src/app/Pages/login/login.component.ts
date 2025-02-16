@@ -40,7 +40,6 @@ export class LoginComponent {
 
     const { username, password } = this.loginForm.value;
 
-    // Exibir toast de carregamento
     const toastRef = this.toastr.info(
       'Verificando credenciais...',
       'Aguarde',
@@ -49,13 +48,13 @@ export class LoginComponent {
 
     this.authService.login(username, password).subscribe({
       next: (response) => {
-        this.toastr.clear(toastRef.toastId); // Remover toast de carregamento
+        this.toastr.clear(toastRef.toastId);
         this.toastr.success('Login realizado com sucesso!', 'Bem-vindo');
         this.authStateService.setUser(response);
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        this.toastr.clear(toastRef.toastId); // Remover toast de carregamento
+        this.toastr.clear(toastRef.toastId);
         if (err.status === 401 || err.status === 500) {
           this.toastr.error('Usuário ou senha inválidos.', 'Erro no login');
         } else {
@@ -65,5 +64,4 @@ export class LoginComponent {
       }
     });
   }
-
 }
