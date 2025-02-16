@@ -45,7 +45,7 @@ export class HistoryComponent {
     if (user && user.id) {
       this.historyService.getHistoryById(user.id).subscribe({
         next: (data) => {
-          console.log('data', data);
+          console.log('dataHistory', data);
 
           this.historyData = data;
         },
