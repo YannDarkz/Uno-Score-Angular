@@ -1,63 +1,42 @@
 {
-    "hostId": 1,
-    "players": [
-      {
-        "username": "ian",
-        "roundWins": 3,
-        "isTrainingWinner": true,
-        "isChampionWinner": false
+  "hostId": 1,
+  "historyData": [
+    {
+      "id": 14,
+      "history": [
+        {
+          "id": 37,
+          "roundNumber": 1,
+          "type": "training",
+          "winner": "empty"
+        },
+        {
+          "id": 38,
+          "roundNumber": 2,
+          "type": "training",
+          "winner": "empty"
+        }
+      ],
+      "players": [
+        {
+          "id": 28,
+          "username": "empty",
+          "roundWins": 1,
+          "championWinner": false,
+          "trainingWinner": true
+        }
+      ],
+      "user": {
+        "id": 16,
+        "name": "empty",
+        "surname": "santos",
+        "birth": "07/03/2001",
+        "login": {
+          "username": "Yann"
+        }
       },
-      {
-        "username": "sync",
-        "roundWins": 2,
-        "isTrainingWinner": false,
-        "isChampionWinner": true
-      },
-      {
-        "username": "éomt",
-        "roundWins": 1,
-        "isTrainingWinner": false,
-        "isChampionWinner": false
-      }
-    ],
-    "trainingHistory": [
-      {
-        "roundNumber": 1,
-        "winner": "ian",
-        "type": "training"
-      },
-      {
-        "roundNumber": 2,
-        "winner": "sync",
-        "type": "training"
-      },
-      {
-        "roundNumber": 3,
-        "winner": "éomt",
-        "type": "training"
-      },
-      {
-        "roundNumber": 4,
-        "winner": "sync",
-        "type": "training"
-      },
-      {
-        "roundNumber": 5,
-        "winner": "ian",
-        "type": "training"
-      },
-      {
-        "roundNumber": 6,
-        "winner": "ian",
-        "type": "training"
-      },
-      {
-        "roundNumber": 7,
-        "winner": "sync",
-        "type": "champion"
-      }
-    ],
-    "winnerChampion": "sync",
-    "winnerTraining": "ian"
-  }
-  
+      "winnerChampion": "linux",
+      "winnerTraining": "empty"
+    }
+  ]
+}
