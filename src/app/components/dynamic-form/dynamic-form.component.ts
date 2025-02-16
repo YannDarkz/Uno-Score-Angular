@@ -49,10 +49,10 @@ export class DynamicFormComponent {
       const parsedUser = JSON.parse(user);
 
       return parsedUser.id || null;
-
     }
     return null;
   }
+
   getUsername(): number | null {
     const user = localStorage.getItem('auth_user');
     if (user) {
@@ -65,14 +65,12 @@ export class DynamicFormComponent {
   }
 
   ngOnInit(): void {
-
     const savedMatch = this.getMatchDataForUser(this.userId)
     console.log(savedMatch);
     
     if (savedMatch) {
       this.hasOngoingMatch = true;
     }
-
   }
 
   resumeMatch(): void {
@@ -80,7 +78,6 @@ export class DynamicFormComponent {
     if (savedMatch) {
       this.router.navigate(['/match'], { state: { data: savedMatch.match } });
     }
-
   }
 
   createPlayerControl(): FormGroup {
@@ -124,7 +121,6 @@ export class DynamicFormComponent {
       console.log('Form Submitted:', formData);
     } else {
       console.error('Form Invalid!');
-
     }
 
   }
