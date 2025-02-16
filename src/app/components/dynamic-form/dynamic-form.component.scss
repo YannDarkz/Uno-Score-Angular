@@ -46,13 +46,6 @@
       flex-direction: column;
       gap: 4px;
 
-      // input {
-
-      //   &.error {
-      //     border-color: $error-color;
-      //   }
-      // }
-
       .remove-btn {
         align-self: flex-start;
         margin-top: 4px;
@@ -97,7 +90,6 @@
       }
 
     }
-
 
     .submit-btn {
       background-color: rgb(58, 162, 70);
