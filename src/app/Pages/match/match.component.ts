@@ -210,9 +210,7 @@ export class MatchComponent {
     this.winnerTraining = null;
     this.winnerChampion = null;
   
-    console.log("Partida encerrada. Dados removidos.");
-  
-    // Redireciona para a página inicial
+    // console.log("Partida encerrada. Dados removidos.");
     this.router.navigate(['/home']);
   }
 
@@ -226,7 +224,6 @@ export class MatchComponent {
     const winner = this.players.find((player) => player.roundWins >= this.trainingRounds);
     if (winner) {
       this.winnerTraining = winner.username;
-      // console.log('Treino vencido por:', winner.username);
       // Finaliza o treino e habilita o champion
       this.isTrainingActive = false;
       this.isChampionActive = true;
@@ -262,7 +259,6 @@ export class MatchComponent {
 
         });
         
-
         // Finaliza o champion
         this.isChampionActive = false;
         this.showModal();
