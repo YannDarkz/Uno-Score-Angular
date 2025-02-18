@@ -3,6 +3,53 @@
   "historyData": [
     {
       "id": 14,
+      "date": "18/02/2024",
+      "history": [
+        {
+          "id": 37,
+          "roundNumber": 1,
+          "type": "training",
+          "winner": "empty"
+        },
+        {
+          "id": 38,
+          "roundNumber": 2,
+          "type": "training",
+          "winner": "empty"
+        }
+      ],
+      "players": [
+        {
+          "id": 28,
+          "username": "empty",
+          "roundWins": 1,
+          "championWinner": false,
+          "trainingWinner": true
+        },
+        {
+          "id": 29,
+          "username": "vary",
+          "roundWins": 1,
+          "championWinner": true,
+          "trainingWinner": false
+        }
+      ],
+      "user": {
+        "id": 16,
+        "name": "empty",
+        "surname": "santos",
+        "birth": "07/03/2001",
+        "login": {
+          "username": "Yann"
+        }
+      },
+      "winnerChampion": "linux",
+      "winnerTraining": "empty"
+    },
+
+    {
+      "id": 15,
+      "date": "19/02/2024",
       "history": [
         {
           "id": 37,
