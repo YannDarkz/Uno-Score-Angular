@@ -7,12 +7,12 @@
         letter-spacing: 1px;
         text-align: center;
         margin-bottom: 3vh;
-
     }
 
     form {
         input {
             margin-bottom: 1vh;
+            border-radius: 10px;
         }
         .invalid {
             transition: all 0.3s ease-in-out;
