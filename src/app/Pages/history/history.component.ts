@@ -33,6 +33,7 @@ export class HistoryComponent {
 
   historyData: any[] = [];
   errorMessage: string = '';
+  selectedHistory: any | null = null;
 
   constructor(private historyService: HistoryIdService, private authStateService: AuthStateService) { }
 
@@ -47,7 +48,10 @@ export class HistoryComponent {
         next: (data) => {
           console.log('dataHistory', data);
 
-          this.historyData = data;
+          this.historyData = data.map((history: any) => ({
+            ...history,
+            playerNames: history.players.map((p: any) => p.username).join(', ')
+          }));;
         },
         error: (err) => {
           this.errorMessage = 'Erro ao carregar historico';
@@ -57,5 +61,13 @@ export class HistoryComponent {
     } else {
       this.errorMessage = 'Usuário não autenticado.';
     }
+  }
+
+  openModal(history: any): void {
+    this.selectedHistory = history;
+  }
+
+  closeModal(): void {
+    this.selectedHistory = null;
   }
 }
