@@ -18,7 +18,6 @@
     background-color: rgba(27, 133, 204, 0.801);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 7px;
-
   }
 
   &:disabled {
@@ -30,10 +29,11 @@
 .form-container {
   max-width: 400px;
   padding: 20px;
-  margin: 0 2vw;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  // background-color: pink;
   // min-height: 70vh ;
+  // margin: 20vh 0vw;
 
   form {
     display: flex;
