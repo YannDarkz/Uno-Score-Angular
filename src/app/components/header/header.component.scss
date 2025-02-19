@@ -21,6 +21,24 @@ header {
 
     }
 
+    .btn-history {
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 5px;
+        height: max-content;
+        margin: auto 0;
+        transition: 0.3s ease-in-out;
+        color: rgb(58, 162, 70);
+
+        &:hover {
+            background-color: rgb(58, 162, 70);
+            color: #fff;
+            cursor: pointer;
+            
+        }
+
+    }
+
     .logo {
         width: 120px;
         height: 120px;

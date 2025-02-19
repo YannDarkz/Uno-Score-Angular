@@ -19,5 +19,12 @@ export class HeaderComponent {
     }
   }
 
+  navigateToHistory(): void {
+    const currentRoute = this.router.url;
+    if (currentRoute === '/home') {
+      this.router.navigate(['/history']);
+    }
+  }
+
 
 }
